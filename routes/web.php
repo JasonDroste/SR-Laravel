@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\MetaTypes;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// All Lisitings
 Route::get('/', function () {
-    return view('welcome');
+    return view('metaTypes', [
+        'heading' => 'Meta Listing',
+        'metaTypes' => MetaTypes::allMeta()
+
+    ]);
+});
+
+// Single Listing
+Route::get('/metaTypes/{id}', function($id){
+    return view('metaType', [
+        'metaType' => MetaTypes::findMeta($id)
+    ]);
 });
 
 Route::get('/dashboard', function () {
