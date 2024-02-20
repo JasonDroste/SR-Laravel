@@ -17,7 +17,7 @@ use App\Models\MetaTypes;
 Route::get('/', function () {
     return view('metaTypes', [
         'heading' => 'Meta Listing',
-        'metaTypes' => MetaTypes::allMeta()
+        'metaTypes' => MetaTypes::all()
 
     ]);
 });
@@ -25,7 +25,7 @@ Route::get('/', function () {
 // Single Listing
 Route::get('/metaTypes/{id}', function($id){
     return view('metaType', [
-        'metaType' => MetaTypes::findMeta($id)
+        'metaType' => MetaTypes::find($id)
     ]);
 });
 
