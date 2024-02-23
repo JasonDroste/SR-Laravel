@@ -4,7 +4,7 @@
 
   @foreach ($metaTypes as $metaType)
     <h2>
-      <a href="/metaTypes/{{$metaType['meta_type']}}">{{$metaType['meta_type']}}</a>
+      <a href="/metaTypes/{{$metaType['id']}}">{{$metaType['meta_type']}}</a>
     </h2>
     <p>
       {{$metaType['BP']}}  

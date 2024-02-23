@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('metatypes', function (Blueprint $table) {
+        Schema::create('meta_types', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->id();
             $table->string('meta_type');
             $table->integer('BP');
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->integer('REA');
             $table->integer('STR');
             $table->integer('CHA');
-            $table->integer('INTl');
+            $table->integer('INTL');
             $table->integer('LOG');
             $table->integer('WIL');
             $table->integer('INI');
