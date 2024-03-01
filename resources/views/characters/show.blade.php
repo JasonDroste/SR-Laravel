@@ -17,13 +17,13 @@
                             alt=""
                         />
 
-                        <h3 class="text-2xl mb-2">{{$metaType['meta_type']}}</h3>
-                        <div class="text-xl font-bold mb-4">Acme Corp</div>
+                        <h3 class="text-2xl mb-2">{{$character['meta_name']}}</h3>
+                        <div class="text-xl font-bold mb-4">{{$character['meta_type']}}</div>
                         <ul class="flex">
                             <li
                                 class="bg-black text-white rounded-xl px-3 py-1 mr-2"
                             >
-                                Body <br><hr> {{$metaType['BOD']}}
+                                Body <br><hr> {{$character['BOD']}}
                             </li>
                             <li
                                 class="bg-black text-white rounded-xl px-3 py-1 mr-2"
@@ -42,7 +42,7 @@
                             </li>
                         </ul>
                         <div class="text-lg my-4">
-                            <i class="fa-solid fa-location-dot"></i> Daytona, FL
+                             Daytona, FL
                         </div>
                         <div class="border border-gray-200 w-full mb-6"></div>
                         <div>
@@ -51,12 +51,7 @@
                             </h3>
                             <div class="text-lg space-y-6">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Eligendi non reprehenderit
-                                    facilis architecto autem quam
-                                    necessitatibus, odit quod, repellendus
-                                    voluptate cum. Necessitatibus a id tenetur.
-                                    Error numquam at modi quaerat.
+                                  
                                 </p>
                                 <p>
                                     Lorem, ipsum dolor sit amet consectetur

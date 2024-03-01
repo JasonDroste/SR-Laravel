@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Models\Character;
+
 use Illuminate\Support\Facades\Route;
-use App\Models\MetaTypes;
+use App\Http\Controllers\MetaDDLController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CharacterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,20 +17,18 @@ use App\Models\MetaTypes;
 |
 */
 // All Lisitings
-Route::get('/', function () {
-    return view('metaTypes', [
-        'heading' => 'Meta Listing',
-        'metaTypes' => MetaTypes::all(),
+Route::get('/', [CharacterController::class, 'index']);
 
-    ]);
-});
+// Show create form
+Route::get('/characters/create', [CharacterController::class, 'create']);
+//Route::get('meta_type',[MetaDDLController::class, 'getMetaType'])->name('meta_type');
+
+//store character data
+Route::post('/characters',[CharacterController::class, 'store']);
 
 // Single Listing
-Route::get('/metaTypes/{id}', function($id){
-    return view('metaType', [
-        'metaType' => MetaTypes::find($id)
-    ]);
-});
+Route::get('/characters/{character}', [CharacterController::class, 'show']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

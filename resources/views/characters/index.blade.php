@@ -6,11 +6,11 @@
     <!-- Grid container -->
     <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">    
 
-        @unless (count($metaTypes) == 0)
+        @unless (count($characters) == 0)
 
-            @foreach ($metaTypes as $metaType)
+            @foreach ($characters as $character)
            
-            <x-metaType-card :metaType="$metaType" />
+            <x-character-card :character="$character" />
 
             @endforeach
         
