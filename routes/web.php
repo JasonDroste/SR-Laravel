@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MetaDDLController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\MetaAttributeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +22,12 @@ Route::get('/', [CharacterController::class, 'index']);
 
 // Show create form
 Route::get('/characters/create', [CharacterController::class, 'create']);
-//Route::get('meta_type',[MetaDDLController::class, 'getMetaType'])->name('meta_type');
+Route::post('/characters/create',[CharacterController::class, 'store']);
 
+Route::get('/characters/create-page-2', [CharacterController::class, 'createPageTwo']);
+Route::post('/characters/create-page-2',[CharacterController::class, 'storePageTwo']);
 //store character data
-Route::post('/characters',[CharacterController::class, 'store']);
+
 
 // Single Listing
 Route::get('/characters/{character}', [CharacterController::class, 'show']);

@@ -6,14 +6,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class MetaTypes extends Model
+class Qualities extends Model
 {
     use HasFactory;
 
-    public static function getMetaData()
+    public static function getPositiveQualities()
     {
-        $metaData = DB::table('meta_types')->get();
-        return $metaData;
+        $positive = DB::table('positive_qualities')->get();
+        return $positive;
     }
-
 }

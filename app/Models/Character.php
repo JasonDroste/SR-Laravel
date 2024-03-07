@@ -9,6 +9,8 @@ class Character extends Model
 {
     use HasFactory;
 
+protected $fillable = ['u_id','meta_name','meta_type', 'pos_q', 'neg_q', 'BOD','AGI','REA','STR','CHA','INTL','LOG','WIL','INI','meta_ability','skills','gear','augments','weapons','contacts','nuyen','back_story'];
+
     public function scopeFilter($query, array $filters)
     {
         if($filters['quality'] ?? false)
